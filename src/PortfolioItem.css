@@ -1,0 +1,18 @@
+article {
+	width: 47.5%;
+	margin-bottom: 100px;
+}
+
+article img {
+	width: 100%;
+}
+
+.portfolio-item-container h2 {
+	margin-top: 10px;
+}
+
+.image-wrap {
+	padding-bottom: 100%;
+	border-radius: 10px;
+	box-shadow: 0px 0px 25px 10px rgba(0,0,0,0.075);
+}

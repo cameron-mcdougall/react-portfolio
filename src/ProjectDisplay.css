@@ -1,0 +1,72 @@
+.project-detail {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding-left: 15px;
+	padding-right: 15px;
+	overflow: scroll;
+}
+
+.project-detail header {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.quick-home,
+.quick-home a {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+.quick-home {
+	background: rgba(0,0,0,0.5);
+}
+
+.project-display-wrap {
+	width: 100%;
+	max-width: 1200px;
+	position: relative;
+	margin-top: 100px;
+	padding: 0px 50px 50px;
+	background: white;
+	border-radius: 10px;
+	z-index: 10;
+}
+
+.project-display-wrap header {
+	position: sticky;
+	top: 0px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background: linear-gradient(180deg, white, transparent);
+}
+
+.content-wrap {
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: nowrap;
+}
+
+.info-display {
+	width: 30%;
+	min-width: 300px;
+}
+
+.image-display {
+	width: 65%;
+	margin-right: 5%;
+}
+
+.project-open {
+	overflow: hidden;
+}
