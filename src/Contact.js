@@ -10,7 +10,10 @@ class Contact extends React.Component {
 
 		this.state = {
 			name: '',
-			email: ''
+			email: '',
+			number: '',
+			message: '',
+			preview: false
 		};
 
 		this.updateInputChange = this.updateInputChange.bind(this);
