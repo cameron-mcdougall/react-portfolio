@@ -3,10 +3,16 @@ import './FormPreview.css';
 
 function FormPreview(props) {
 
-	let previewInfo = (props.prev.name || props.prev.email || props.prev.number || props.prev.message) === '' ? <p id='preview-info'>A preview of your message will appear below:</p> : null;
+	let previewInfo = (
+		props.prev.name ||
+		props.prev.email ||
+		props.prev.number ||
+		props.prev.message) === '' ? <p id='preview-info'>A preview of your message will appear below:</p> : null;
+
+	let toggle = (props.prev.preview === true) ? "showing" : "hidden";
 
 	return (
-		<section className='form-preview'>
+		<section className={`form-preview ${toggle}`}>
 			<h4>Preview</h4>
 			<article className='preview-contents'>
 				{previewInfo}
