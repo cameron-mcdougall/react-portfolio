@@ -1,0 +1,70 @@
+.form-wrap {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.form-input form,
+.form-preview {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-input input,
+.form-input textarea {
+	width: 100%;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	padding-bottom: 20px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #222;
+	font-size: 1em;
+}
+
+.form-input.preview-closed {
+	width: 50%;
+	transform: translateX(50%);
+	transition: 0.25s ease 0.25s;
+}
+
+.form-input.preview-open {
+	transform: translateX(0%);
+	transition: transform 0.25s ease 0s;
+	width: 47.5%;
+}
+
+.form-preview {
+	width: 47.5%;
+	word-break: break-all;
+}
+
+.form-preview.hidden {
+	opacity: 0;
+	transition: 0.25s;
+}
+
+.form-preview.showing {
+	opacity: 1;
+	transition: opacity 0.25s ease 0.25s;
+}
+
+.preview-contents {
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #eaeaea;
+	border-radius: 10px;
+	padding: 25px;
+	background-color: white;
+	box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.1);
+	white-space: pre-wrap;
+}
+
+.preview-entry {
+	font-size: 1.25em;
+	margin-bottom: 10px;
+}
+
+#preview-message {
+	margin-top: 25px;
+}
