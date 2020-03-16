@@ -7,7 +7,7 @@ function FormPreview(props) {
 		props.prev.name ||
 		props.prev.email ||
 		props.prev.number ||
-		props.prev.message) === '' ? <p id='preview-info'>A preview of your message will appear below:</p> : null;
+		props.prev.message) === null ? <p id='preview-info'>A preview of your message will appear below:</p> : null;
 
 	let toggle = (props.prev.preview === true) ? "showing" : "hidden";
 

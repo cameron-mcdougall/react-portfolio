@@ -68,3 +68,8 @@
 #preview-message {
 	margin-top: 25px;
 }
+
+.error-report {
+	color: red;
+	margin-bottom: 40px;
+}
