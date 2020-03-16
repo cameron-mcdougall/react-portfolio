@@ -6,28 +6,42 @@ class Form extends React.Component {
 
 	render() {
 
-		let previewState = (this.props.prev === true) ? "preview-open" : "preview-closed";
-		let toggleState = (this.props.prev === true) ? "Close preview" : "Preview message";
+		let state = this.props.prev;
+
+		let previewState = (state.preview === true) ? "preview-open" : "preview-closed";
+		let toggleState = (state.preview === true) ? "Close preview" : "Preview message";
 
 		return (
 			<section className={`form-input ${previewState}`}>
 				<h4>Get in touch</h4>
-				<form onSubmit={this.handleSubmit} method='POST'>
+				<form id='input-form' method='POST'>
 					<label>Name:
-						<input name='name' type='text' onChange={this.props.handleChange} />
+						<input name='name' type='text' onChange={this.props.handleChange} value={state.name} />
+						<div id='error-name' className='error-report'>
+
+						</div>
 					</label>
 					<label>Email:
-						<input name='email' type='email' onChange={this.props.handleChange} />
+						<input name='email' type='email' onChange={this.props.handleChange} value={state.email} />
+						<div className='error-report'>
+
+						</div>
 					</label>
 					<label>Tel:
-						<input name='number' type='number' onChange={this.props.handleChange} />
+						<input name='number' type='number' onChange={this.props.handleChange} value={state.number}/>
+						<div className='error-report'>
+
+						</div>
 					</label>
 					<label>Message:
-						<textarea name='message' rows='4' cols='20' onChange={this.props.handleChange} />
+						<textarea name='message' rows='2' cols='20' onChange={this.props.handleChange} value={state.message} />
+						<div className='error-report'>
+
+						</div>
 					</label>
 					<div className='form-button-wrap'>
-						<input type='submit' value='Send' onClick={this.props.handleSubmit} />
-						<button type='button' onClick={this.props.togglePreview} >{toggleState}</button>
+						<input type='submit' value='Send' onClick={this.props.handleSubmit}/>
+						<button type='button' onClick={this.props.togglePreview}>{toggleState}</button>
 					</div>
 				</form>
 				

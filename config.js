@@ -1,4 +1,4 @@
 module.exports = {
-	USER: ' /* SMTP EMAIL ADDRESS HERE */ ',
-	PASS: ' /* SMTP EMAIL PASSWORD HERE */ '
+	USER: '/* SMTP EMAIL ADDRESS */',
+	PASS: '/* SMTP EMAIL PASSWORD */'
 }

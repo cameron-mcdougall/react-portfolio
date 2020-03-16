@@ -18,7 +18,7 @@ const nodemailer = require('nodemailer');
 const creds = require('./config');
 
 var transport = {
-	host: 'smtp.gmail.com',
+	host: ' /* SMTP DETAIL */ ',
 	auth: {
 		user: creds.USER,
 		pass: creds.PASS
@@ -36,17 +36,31 @@ transporter.verify((error, success) => {
 });
 
 // Route to inbox config
-app.use(express.json()); app.post('/send', (req, res, next) => {
-	const name = req.body.name
-	const email = req.body.email
-	const message = req.body.message
+app.use(express.json());
+
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.post('/send', (req, res, next) => {
+	const name = req.body.name;
+	const email = req.body.email;
+	const number = req.body.number;
+	const message = req.body.message;
 
 	var mail = {
-		from: name,
-		to: ' /* RECIPIENT EMAIL HERE */ ',
-		subject: 'Enquiry from portfolio site',
+		from: `${name} <${email}>`,
+		to: ' /* RECIPIENT EMAIL ADDRESS */ ',
+		subject: 'Enquiry from portfolio',
 
-		html: message
+		html: `<h4><strong>Name:</strong> ${name}</h4>
+			   <h4><strong>Email:</strong> ${email}</h4>
+			   <h4><strong>Number:</strong> ${number}</h4>
+			   <hr>
+			   <p><strong>Message:</strong> ${message}</p>`
 	}
 
 	transporter.sendMail(mail, (err, data) => {

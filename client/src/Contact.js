@@ -11,6 +11,7 @@ class Contact extends React.Component {
 
 		this.state = {
 			name: '',
+			nameError: '',
 			email: '',
 			number: '',
 			message: '',
@@ -77,7 +78,7 @@ class Contact extends React.Component {
 		return (
 			<section className='form-wrap'>
 				<Form
-					prev={this.state.preview}
+					prev={this.state}
 					handleChange={this.updateInputChange.bind(this)}
 					handleSubmit={this.handleSubmit.bind(this)} 
 					togglePreview={this.togglePreview.bind(this)}
