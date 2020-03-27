@@ -1,4 +1,5 @@
 import React from 'react';
+import RecaptchaTestComponent from './RecaptchaTestComponent';
 import './Form.css';
 
 
@@ -28,8 +29,8 @@ class Form extends React.Component {
 								<div className='error-report'>{errors.email}</div>}
 
 					</label>
-					<label>Tel:
-						<input name='number' type='number' onChange={this.props.handleChange} value={state.number}/>
+					<label>Tel*:
+						<input name='number' type='number' onChange={this.props.handleChange} value={state.number} required/>
 						{errors.number.length > 0 &&
 								<div className='error-report'>{errors.number}</div>}
 
@@ -41,7 +42,9 @@ class Form extends React.Component {
 
 					</label>
 					<div className='form-button-wrap'>
+					<RecaptchaTestComponent />
 						<input type='submit' value='Send' onClick={this.props.handleSubmit}/>
+								<div className='error-report'>{errors.submit}</div>
 						<button type='button' onClick={this.props.togglePreview}>{toggleState}</button>
 					</div>
 				</form>

@@ -4,7 +4,7 @@ import axios from 'axios';
 import Form from './Form';
 import FormPreview from './FormPreview';
 
-const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+const validEmailRegex = RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i);
 const validateForm = (errors) => {
 	let valid = true;
 	Object.values(errors).forEach(
@@ -20,10 +20,10 @@ class Contact extends React.Component {
 		super(props);
 
 		this.state = {
-			name: null,
-			email: null,
-			number: null,
-			message: null,
+			name: '',
+			email: '',
+			number: '',
+			message: '',
 			preview: false,
 			errors: {
 				name: '',
@@ -76,7 +76,7 @@ class Contact extends React.Component {
 			console.info('Valid Form');
 			axios({
 			method: 'POST',
-			url: 'http:\//localhost:5000/send',
+			url: 'http://localhost:5000/send',
 			data: {
 				name: this.state.name,
 				email: this.state.email,
@@ -92,17 +92,17 @@ class Contact extends React.Component {
 			}
 		})
 		} else {
-			console.error('Invalid Form')
+
 		}
 		
 	}
 
 	resetForm(){
 			this.setState({
-				name: null,
-				email: null,
-				number: null,
-				message: null
+				name: '',
+				email: '',
+				number: '',
+				message: ''
 			})
 		}
 

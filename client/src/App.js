@@ -5,7 +5,7 @@ import { Route, HashRouter as Router } from 'react-router-dom';
 import Work from './Work';
 import About from './About';
 import Contact from './Contact';
-
+import { loadReCaptcha } from 'react-recaptcha-google';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -24,6 +24,8 @@ class App extends React.Component {
     this.callBackendAPI()
       .then(res => this.setState({ data: res.express }))
       .catch(err => console.log(err));
+
+    loadReCaptcha();  
   }
 
   callBackendAPI = async () => {
