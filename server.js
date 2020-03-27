@@ -18,7 +18,7 @@ const nodemailer = require('nodemailer');
 const creds = require('./config');
 
 var transport = {
-	host: 'smtp.ionos.co.uk',
+	host: '',
 	auth: {
 		user: creds.USER,
 		pass: creds.PASS
@@ -53,7 +53,7 @@ app.post('/send', (req, res, next) => {
 
 	var mail = {
 		from: `${name} <${email}>`,
-		to: 'hello@cameronmcdougall.eu',
+		to: '',
 		subject: 'Enquiry from portfolio',
 
 		html: `<h4><strong>Name:</strong> ${name}</h4>
