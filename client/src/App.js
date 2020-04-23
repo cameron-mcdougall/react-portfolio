@@ -2,10 +2,10 @@ import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import { Route, HashRouter as Router } from 'react-router-dom';
+import { loadReCaptcha } from 'react-recaptcha-google';
 import Work from './Work';
 import About from './About';
 import Contact from './Contact';
-import { loadReCaptcha } from 'react-recaptcha-google';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -47,14 +47,13 @@ class App extends React.Component {
           <Header />
 
           <main className='content'>
-            <p className="App-intro">{this.state.data}</p>
             <Route exact path='/' component={Work} />
             <Route path='/about' component={About} />
             <Route path='/contact' component={Contact} />
           </main>
 
           <Footer />
-          
+          <p className="App-intro">{this.state.data}</p>
         </React.Fragment>
       </Router>  
     );

@@ -7,7 +7,10 @@ function PortfolioItem(props) {
 	const typeSlug = props.item.type.split(' ').join('-').toLowerCase();
 
 	const backgroundStyle = {
-		background: `url(${props.item.images[0]}) no-repeat center center`,
+		backgroundImage: `url(${props.item.images[0]})`,
+		backgroundRepeat: `no-repeat`,
+		backgroundOrigin: `center`,
+		backgroundPosition: `center`,
 		backgroundSize: `cover`
 	};
 

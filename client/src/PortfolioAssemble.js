@@ -7,13 +7,24 @@ import { portfolioElements } from './Content';
 
 function PortfolioAssemble() {
 
-	const portfolioLinkAssembly = Object.keys(portfolioElements).map(key => 
-    	<PortfolioItem key={key} item={portfolioElements[key]} link={key} />
+	const shuffle = array => {
+		for (let i = array.length - 1; i > 0; i--) {
+			let j = Math.floor(Math.random() * (i + 1)); // Random index from 0 to i
+
+			// Swap elements array[i] and array[j] (using destructing assignmnet)
+			[array[i], array[j]] = [array[j], array[i]];
+		}
+		return array;
+	}
+
+	let shuffledPortfolio = shuffle(portfolioElements);
+
+	const portfolioLinkAssembly = Object.keys(shuffledPortfolio).map(key => 
+    	<PortfolioItem key={key} item={shuffledPortfolio[key]} link={key} />
 	)
 
-	const portfolioItemAssembly = Object.keys(portfolioElements).map(element =>
-		//<Route key={element} path={portfolioElements[element].id} render={(props) => <ItemDisplay {...props} item={portfolioElements[element]} />} />
-		<Route key={element} path={portfolioElements[element].id} render={(props) => <ProjectDisplay {...props} position={element} />} />
+	const portfolioItemAssembly = Object.keys(shuffledPortfolio).map(element =>
+		<Route key={element} path={shuffledPortfolio[element].id} render={(props) => <ProjectDisplay {...props} position={element} />} />
 	)
 
 	return (

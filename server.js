@@ -10,7 +10,7 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // Create a GET route
 app.get('/express_backend', (req, res) => {
-	res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
+	res.send({ express: 'Mail server is up and running \u2665' });
 });
 
 // Transporter config
@@ -18,7 +18,7 @@ const nodemailer = require('nodemailer');
 const creds = require('./config');
 
 var transport = {
-	host: '',
+	host: 'smtp.ionos.co.uk',
 	auth: {
 		user: creds.USER,
 		pass: creds.PASS
@@ -53,7 +53,7 @@ app.post('/send', (req, res, next) => {
 
 	var mail = {
 		from: `${name} <${email}>`,
-		to: '',
+		to: 'hello@cameronmcdougall.eu',
 		subject: 'Enquiry from portfolio',
 
 		html: `<h4><strong>Name:</strong> ${name}</h4>

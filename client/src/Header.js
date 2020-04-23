@@ -8,7 +8,7 @@ const menuType = 'header';
 function Header() {
 	return(
 		<header>
-			<h1>TEST</h1>
+			<h1>Cameron McDougall</h1>
 			<Nav list={mainNavElements} type={menuType} />
 		</header>
 	);
